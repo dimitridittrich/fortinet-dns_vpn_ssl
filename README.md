@@ -12,6 +12,6 @@ Para pleno funcionamento deste projeto, você precisará:
 ## Como Utilizar este projeto
 
 **Na pasta "Scripts" há o Script principal:**<br />
-1 - "FortiNet-DNS_VPN_SSL"
+1 - "FortiNet-DNS_VPN_SSL.ps1"
 Este script faz todo o processo de conexão e pesquisa nos Switches e a interação com o Active Directory.<br />
-[Para acessar esse script clique aqui](/scripts/FortiNet-DNS_VPN_SSL)
+[Para acessar esse script clique aqui](/scripts/FortiNet-DNS_VPN_SSL.ps1)
