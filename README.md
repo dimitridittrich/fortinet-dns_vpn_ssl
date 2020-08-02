@@ -15,3 +15,9 @@ Para pleno funcionamento deste projeto, você precisará:
 1 - "FortiNet-DNS_VPN_SSL.ps1"
 Este script faz todo o processo de conexão e pesquisa nos Switches e a interação com o Active Directory.<br />
 [Para acessar esse script clique aqui](/scripts/FortiNet-DNS_VPN_SSL.ps1)
+
+**Dentro do script é necessário informar:**<br />
+$zonename - Nome da Zona DNS
+$dnsserver - Nome do servidor DNS
+$netscope - IP da rede que deseja tratar
+$excludeip - Algum IP que queira excluir (exception) do tratamento
