@@ -12,7 +12,7 @@ Para pleno funcionamento deste projeto, você precisará:
 ## Como Utilizar este projeto
 
 **Na pasta "Scripts" há o Script principal:**<br />
-1 - "FortiNet-DNS_VPN_SSL.ps1"
+1 - "FortiNet-DNS_VPN_SSL.ps1"<br />
 [Para acessar esse script clique aqui](/scripts/FortiNet-DNS_VPN_SSL.ps1)
 
 **Dentro do script é necessário informar:**<br />
