@@ -51,7 +51,7 @@ function Clean-DNSRegisters-VPNSSL
 $zonename = "domain.local"
 $dnsserver = "serverdc01"
 $netscope = "172.30*"
-$excludeip = "172.30.8.1"
+$excludeip = ""
 
 cls
 $registers = Get-DnsServerResourceRecord -ComputerName hb-vw16dc02 -ZoneName $zonename -RRType "A" | select-object -Property Hostname,Timestamp, @{Name='RecordData';Expression={$_.RecordData.IPv4Address}} | ?{$_.RecordData -like $netscope} |?{$_.RecordData -notlike $excludeip}
