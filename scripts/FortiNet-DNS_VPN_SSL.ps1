@@ -19,11 +19,11 @@ Não temos o problema de vários IPs para o mesmo Host, pois o DNS Windows não 
 #>
 
 
-#------------AUTOMATIC-PATH-------------
+#------------AUTOMATIC-PATH--------------
 $completo = $MyInvocation.MyCommand.Path
 $scremailtname = $MyInvocation.MyCommand.Name
 $caminho = $completo -replace $scremailtname, ""
-#---------------------------------------
+#----------------------------------------
 cls
 
 function Clean-DNSRegisters-VPNSSL
