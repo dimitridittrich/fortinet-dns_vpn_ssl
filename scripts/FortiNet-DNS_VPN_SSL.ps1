@@ -54,7 +54,7 @@ $netscope = "172.30*"
 $excludeip = ""
 
 cls
-$registers = Get-DnsServerResourceRecord -ComputerName hb-vw16dc02 -ZoneName $zonename -RRType "A" | select-object -Property Hostname,Timestamp, @{Name='RecordData';Expression={$_.RecordData.IPv4Address}} | ?{$_.RecordData -like $netscope} |?{$_.RecordData -notlike $excludeip}
+$registers = Get-DnsServerResourceRecord -ComputerName $dnsserver -ZoneName $zonename -RRType "A" | select-object -Property Hostname,Timestamp, @{Name='RecordData';Expression={$_.RecordData.IPv4Address}} | ?{$_.RecordData -like $netscope} |?{$_.RecordData -notlike $excludeip}
 #[array]$log = @()
 
 
@@ -96,7 +96,7 @@ foreach ($tratadoitem in $registrostratados){
                                 $log = "================================================================================================================="
                                 $log += "`r`n$(Get-Date) --- $tratadoitem é menor que $_"
                                 $log += "`r`n$(Get-Date) --- $tratadoitem será APAGADO!"
-		                        Remove-DnsServerResourceRecord -ComputerName hb-vw16dc02 -ZoneName $zonename -RRType "A" -Name $tratadoitem.Hostname -RecordData $tratadoitem.RecordData.IPAddressToString -Force
+		                        Remove-DnsServerResourceRecord -ComputerName $dnsserver -ZoneName $zonename -RRType "A" -Name $tratadoitem.Hostname -RecordData $tratadoitem.RecordData.IPAddressToString -Force
                                 Add-Content -Path $pathlog -Value $log -Encoding UTF8
                                 }elseif ($tratadoitemdate -gt $item2date)
                                         {
@@ -106,7 +106,7 @@ foreach ($tratadoitem in $registrostratados){
                                         $log = "================================================================================================================="
                                         $log += "`r`n$(Get-Date) --- $tratadoitem é maior que $_"
                                         $log += "`r`n$(Get-Date) --- $_ será APAGADO!"
-                                        Remove-DnsServerResourceRecord -ComputerName hb-vw16dc02 -ZoneName $zonename -RRType "A" -Name $_.Hostname -RecordData $_.RecordData.IPAddressToString -Force
+                                        Remove-DnsServerResourceRecord -ComputerName $dnsserver -ZoneName $zonename -RRType "A" -Name $_.Hostname -RecordData $_.RecordData.IPAddressToString -Force
                                         Add-Content -Path $pathlog -Value $log -Encoding UTF8
                                         }else
                                             {
